@@ -29,4 +29,6 @@ docker run -d \
   clickhouse/clickhouse-server:24.2-alpine
 ```
 
-## 2. Docker compose TODO
+## 2. Docker compose
+
+参考文件 docker-compose.yml
