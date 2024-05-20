@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  clickhouse:
+    platform: linux/arm64
+    image: clickhouse/clickhouse-server:24.2-alpine
+    container_name: clickhouse-11
+    ports:
+      - "8123:8123"
+      - "9000:9000"
+    ulimits:
+      nofile: 262144
+    volumes:
+      - /opt/apps/clickhouse/logs:/var/log/clickhouse-server
+      - /opt/apps/clickhouse/data:/var/lib/clickhouse
+    restart: unless-stopped
