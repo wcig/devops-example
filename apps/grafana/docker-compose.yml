@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  grafana:
+    image: grafana/grafana:10.0.2
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
+      - ./grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards
+      - ./grafana/dashboards:/var/lib/grafana/dashboards
